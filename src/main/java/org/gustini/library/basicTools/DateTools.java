@@ -1,5 +1,6 @@
 package org.gustini.library.basicTools;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
@@ -1056,7 +1057,7 @@ public class DateTools
      */
     public static java.util.Date addDaysToDateToday(int numberOfDays)
     {
-        Calendar cal = Calendar.getInstance();
+//        Calendar cal = Calendar.getInstance();
         Calendar calReturn = Calendar.getInstance();
         calReturn.add(Calendar.DATE, numberOfDays);
         return calReturn.getTime();
@@ -1102,5 +1103,50 @@ public class DateTools
         
         
     }
+
+public static Date getDateFromSqlDate(java.sql.Date date)
+{
+    return new Date(date.getTime());
+}
+
+public static Date getDateFromSqlTimeStampString(String updatedDateString)
+{
+    Timestamp ts = Timestamp.valueOf(updatedDateString);
+    return new Date(ts.getTime());
+}
+
+/**
+ * 
+ * Description: Return true if date is between fromDate and toDate 
+ * 
+ * @param dateFrom
+ * @param dateTo
+ * @param valueDate
+ * @return
+ * Creation: 26.07.2018 by mst
+ */
+public static boolean isDateBetweenTwoDates(Date dateFrom, Date dateTo, Date valueDate)
+{
+    Date dateFromMinusOneDay = DateTools.addDaysToDate(dateFrom, -1);
+    Date dateToPlusOneDay = DateTools.addDaysToDate(dateTo, 1);
+    return valueDate.before(dateToPlusOneDay) && valueDate.after(dateFromMinusOneDay);
+}
+
+/**
+ * 
+ * Description: 
+ * 
+ * @param date
+ * @param numberOfDays
+ * @return
+ * Creation: 26.07.2018 by mst
+ */
+public static Date addDaysToDate(final Date date, final int numberOfDays)
+{
+    Calendar calReturn = Calendar.getInstance();
+    calReturn.setTime(date);
+    calReturn.add(Calendar.DATE, numberOfDays);
+    return calReturn.getTime();
+}
 
 }
