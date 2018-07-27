@@ -131,7 +131,7 @@ public class FileOperator
      * @return
      * Creation: 14.12.2016 by mst
      */
-    public static File[] getFilesFromPathWithFileExtension(File folderPath, String extension)
+    public static File[] getFilesFromPathWithFileExtension(File folderPath, final String extension)
     {
  
         FilenameFilter filenameFilter = new FilenameFilter()
