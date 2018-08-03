@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gustini.library.tools.fileOperator;
+package org.gustini.library.tools.fileOperator;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
  * Gustini GmbH (2016)
  * Creation: 15.12.2016
  * Library
- * gustini.library.tools.fileOperator
+ * org.gustini.library.tools.fileOperator
  * 
  * @author Matthias Staud
  *

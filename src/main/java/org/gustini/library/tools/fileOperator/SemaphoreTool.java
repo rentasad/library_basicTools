@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gustini.library.tools.fileOperator;
+package org.gustini.library.tools.fileOperator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ import java.io.PrintWriter;
  * Gustini GmbH (2017)
  * Creation: 07.06.2017
  * Library
- * gustini.library.tools.fileOperator
+ * org.gustini.library.tools.fileOperator
  * 
  * @author Matthias Staud
  *

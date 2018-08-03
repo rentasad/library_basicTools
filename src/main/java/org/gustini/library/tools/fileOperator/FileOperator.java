@@ -1,4 +1,4 @@
-package gustini.library.tools.fileOperator;
+package org.gustini.library.tools.fileOperator;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -352,10 +352,12 @@ public class FileOperator
        return crc32.getValue();
    }
 
-    public static String getEncodingFromFile(File csvFile) throws FileNotFoundException
+    public static String getEncodingFromFile(File csvFile) throws IOException
     {
         InputStreamReader r = new InputStreamReader(new FileInputStream(csvFile));
-        return r.getEncoding();
+        String encoder = r.getEncoding();
+        r.close();
+        return encoder; 
     }
 
 }
