@@ -1109,6 +1109,14 @@ public static Date getDateFromSqlDate(java.sql.Date date)
     return new Date(date.getTime());
 }
 
+/**
+ * 
+ * Description: 
+ * 
+ * @param updatedDateString
+ * @return
+ * Creation: 17.08.2018 by mst
+ */
 public static Date getDateFromSqlTimeStampString(String updatedDateString)
 {
     Timestamp ts = Timestamp.valueOf(updatedDateString);
