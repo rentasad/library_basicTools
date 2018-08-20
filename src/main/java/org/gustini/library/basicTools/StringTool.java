@@ -562,6 +562,7 @@ public class StringTool
         stringValue = stringValue.replaceAll("\u00FF", "");
         stringValue = stringValue.replaceAll("\ufffd", "");
         stringValue = stringValue.replaceAll("\"", "");
+        stringValue = stringValue.replaceAll("[^\\p{Graph}\n\r\t ]", "");
         return stringValue;
     }
 
