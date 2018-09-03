@@ -1157,4 +1157,19 @@ public static Date addDaysToDate(final Date date, final int numberOfDays)
     return calReturn.getTime();
 }
 
+/**
+ * 
+ * Description: return SQL.Timestamp as String 
+ * 
+ * @param fileNameTimestampAfterProvide
+ * @return
+ * Creation: 23.08.2018 by mst
+ */
+public static Object getSqlTimeStampStringFromTimeStamp(Timestamp timestamp)
+{
+    Date date = new Date(timestamp.getTime());
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    return dateFormat.format(date);
+}
+
 }
