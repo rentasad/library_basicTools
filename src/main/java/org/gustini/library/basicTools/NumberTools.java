@@ -170,5 +170,16 @@ public class NumberTools
             return 0;
         }
     }
+    
+    /**
+     * Rundet den übergebenen Wert auf die Anzahl der übergebenen Nachkommastellen
+     *
+     * @param value ist der zu rundende Wert.
+     * @param decimalPoints ist die Anzahl der Nachkommastellen, auf die gerundet werden soll.
+     */
+     public static double round(double value, int decimalPoints) {
+        double d = Math.pow(10, decimalPoints);
+        return Math.round(value * d) / d;
+     }
 
 }
