@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedMap;
 import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,8 +23,8 @@ public class StringTool
     /**
      * For String to HEX Conversions
      */
-    private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
-    
+    public final static char[] HEX_CHAR_ARRAY = "0123456789ABCDEF".toCharArray();
+
     /**
      *
      * Suchen und Ersetzen es wird nach dem Key gesucht und durch das Value des
@@ -68,7 +67,7 @@ public class StringTool
      *
      * @param valueString
      * @return
-     * Creation: 21.06.2016 by mst
+     *         Creation: 21.06.2016 by mst
      */
     public static String escapeStringToHtml(final String valueString)
     {
@@ -91,7 +90,7 @@ public class StringTool
             returnString = returnString.replace("Á", "&Aacute;");
             returnString = returnString.replace("Â", "&Acirc;");
             returnString = returnString.replace("Ã", "&Atilde;");
-           // returnString = returnString.replace("�...", "&Aring;");
+            // returnString = returnString.replace("�...", "&Aring;");
             returnString = returnString.replace("Æ", "&AElig;");
             returnString = returnString.replace("Ç", "&Ccedil;");
             returnString = returnString.replace("È", "&Egrave;");
@@ -141,8 +140,8 @@ public class StringTool
             returnString = returnString.replace("þ", "&thorn;");
             returnString = returnString.replace("Š", "&Scaron;");
             returnString = returnString.replace("š", "&scaron;");
-            //returnString = returnString.replace("ae�", "&Ccaron;");
-           // returnString = returnString.replace("ae�", "&ccaron;");
+            // returnString = returnString.replace("ae�", "&Ccaron;");
+            // returnString = returnString.replace("ae�", "&ccaron;");
             returnString = returnString.replace("ß", "&szlig;");
             /*
              * returnString = returnString.replace("Α", "&Alpha;");
@@ -408,11 +407,11 @@ public class StringTool
             if (i == 0)
             {
                 string = string + stringArray[i];
-            }else
+            } else
             {
                 string = string + "\n" + stringArray[i];
             }
-                
+
         }
         return string;
 
@@ -489,71 +488,78 @@ public class StringTool
     {
         return splittString.split(separator);
     }
-    
+
     /**
      * 
-     * Description: 
+     * Description:
      * 
      * @param input
      * @return
-     * Creation: 15.12.2016 by mst
+     *         Creation: 15.12.2016 by mst
      */
-    public static boolean isValidUTF8( byte[] input ) {
+    public static boolean isValidUTF8(byte[] input)
+    {
 
-        
         CharsetDecoder cs = Charset.forName("UTF-8").newDecoder();
 
-        try {
+        try
+        {
             cs.decode(ByteBuffer.wrap(input));
             return true;
-        }
-        catch(CharacterCodingException e){
+        } catch (CharacterCodingException e)
+        {
             return false;
-        }       
+        }
     }
+
     /**
      * 
-     * Description: 
+     * Description:
      * 
      * @param input
      * @param encoding
      * @return
-     * Creation: 15.12.2016 by mst
+     *         Creation: 15.12.2016 by mst
      */
-    public static boolean isUTF8MisInterpreted( String input, String encoding) {
+    public static boolean isUTF8MisInterpreted(String input, String encoding)
+    {
 
-        SortedMap<String, Charset> csMap = Charset.availableCharsets();
-        Set keySet = csMap.keySet();
+        // SortedMap<String, Charset> csMap = Charset.availableCharsets();
+        // Set keySet = csMap.keySet();
         CharsetDecoder decoder = Charset.forName("UTF-8").newDecoder();
         CharsetEncoder encoder = Charset.forName(encoding).newEncoder();
         ByteBuffer tmp;
-        try {
+        try
+        {
             tmp = encoder.encode(CharBuffer.wrap(input));
         }
 
-        catch(CharacterCodingException e) {
+        catch (CharacterCodingException e)
+        {
             return false;
         }
 
-        try {
+        try
+        {
             decoder.decode(tmp);
             return true;
-        }
-        catch(CharacterCodingException e){
+        } catch (CharacterCodingException e)
+        {
             return false;
-        }       
+        }
     }
+
     /**
      * 
-     * Description: 
+     * Description:
      * 
      * @param stringValue
      * @return
-     * Creation: 17.01.2017 by mst
+     *         Creation: 17.01.2017 by mst
      */
     public static String removeUniCodeGlyphs(String stringValue)
     {
-        
+
         stringValue = stringValue.replaceAll("\u00ef", "");
         stringValue = stringValue.replaceAll("\u00bf", "");
         stringValue = stringValue.replaceAll("\u00bb", "");
@@ -568,13 +574,13 @@ public class StringTool
 
     /**
      * 
-     * Description: 
+     * Description:
      * 
      * @param plaintext
      * @return
      * @throws NoSuchAlgorithmException
      * @throws UnsupportedEncodingException
-     * Creation: 06.11.2017 by mst
+     *             Creation: 06.11.2017 by mst
      */
     public static String getMd5HashFromString(String plaintext) throws NoSuchAlgorithmException, UnsupportedEncodingException
     {
@@ -582,11 +588,12 @@ public class StringTool
         m.reset();
         m.update(plaintext.getBytes());
         byte[] digest = m.digest();
-        BigInteger bigInt = new BigInteger(1,digest);
+        BigInteger bigInt = new BigInteger(1, digest);
         String hashtext = bigInt.toString(16);
         // Now we need to zero pad it if you actually want the full 32 chars.
-        while(hashtext.length() < 32 ){
-          hashtext = "0"+hashtext;
+        while (hashtext.length() < 32)
+        {
+            hashtext = "0" + hashtext;
         }
         return hashtext;
     }
