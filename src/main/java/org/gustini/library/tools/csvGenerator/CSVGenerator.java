@@ -7,8 +7,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.List;
 
+import org.gustini.library.tools.csvGenerator.ICsvGeneratorDataEntry;
 import org.gustini.library.tools.exceptions.UnknownFieldIntException;
+
+
 
 
 /**
@@ -41,6 +45,24 @@ public class CSVGenerator
 		this.writeHeader = writeHeader;
 	}
 
+	/**
+	 * 
+	 * Description:  CSV-Datei aus implementierten ICSVGeneratorDataEntry - Interface
+	 * 
+	 * @param csvFileName
+	 * @param valueEntriesList
+	 * @return
+	 * @throws IOException
+	 * @throws UnknownFieldIntException
+	 * Creation: 12.11.2018 by mst
+	 */
+	public boolean generateCSVFromICsvGeneratorDataEntry(final String csvFileName, final List<ICsvGeneratorDataEntry> valueEntriesList) throws IOException, UnknownFieldIntException
+	{
+	    ICsvGeneratorDataEntry[] valueEntries = valueEntriesList.toArray(new ICsvGeneratorDataEntry[0]);
+	    return generateCSVFromICsvGeneratorDataEntry(csvFileName,valueEntries );
+	}
+	
+	
 	/**
 	 * Schreibt CSV-Datei aus implementierten ICSVGeneratorDataEntry - Interface
 	 * 
