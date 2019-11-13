@@ -6,7 +6,9 @@ import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
+import java.time.Instant;
 import java.time.Month;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -1170,6 +1172,41 @@ public static Object getSqlTimeStampStringFromTimeStamp(Timestamp timestamp)
     Date date = new Date(timestamp.getTime());
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     return dateFormat.format(date);
+}
+
+/**
+ * 
+ * Return {@link Timestamp} from TimestampString in Format   yyyy-MM-dd hh:mm:ss
+ * 
+ * @param timeStampString "yyyy-MM-dd hh:mm:ss.SSS"
+ * @return
+ * @throws ParseException
+ * Creation: 11.07.2019 by mst
+ */
+public static Timestamp getTimeStampFromTimeStampString(final String timeStampString) throws ParseException
+{
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    Date parsedDate = dateFormat.parse(timeStampString);
+    Timestamp timestamp = new java.sql.Timestamp(parsedDate.getTime());
+    return timestamp;
+}
+
+/**
+ * 
+ * Return {@link Timestamp} from TimestampString in Format   yyyy-MM-dd hh:mm:ss
+ * 
+ * @param timeStampString "yyyy-MM-dd hh:mm:ss.SSS"
+ * @return
+ * @throws ParseException
+ * Creation: 11.07.2019 by mst
+ */
+public static Timestamp getTimeStampFromISO8601TimeStampString(final String timeStampString) throws ParseException
+{
+    OffsetDateTime odt = OffsetDateTime.parse( timeStampString );
+    Instant instant = odt.toInstant();  // Instant is always in UTC.
+    java.util.Date date = Date.from( instant);
+    Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+    return timestamp;
 }
 
 }
