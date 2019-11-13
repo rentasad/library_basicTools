@@ -5,10 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import org.json.JSONObject;
+
+import com.extendedsystems.jdbc.advantage.ADSConnection;
 
 /**
  * 
@@ -102,5 +106,7 @@ public class WaehrungsKursTool
         }
         return kursItem;
     }
+    
+
 
 }
