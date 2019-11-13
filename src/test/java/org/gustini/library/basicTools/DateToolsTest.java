@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.sql.Timestamp;
 import java.time.DayOfWeek;
 import java.time.Month;
 import java.util.Calendar;
@@ -210,6 +211,42 @@ public void testGetDateFromSqlTimeStampString() throws Exception
    String sqlTimeStampString = "2018-07-26 10:36:15";
    Date date = DateTools.getDateFromSqlTimeStampString(sqlTimeStampString);
    assertEquals(DateTools.getSQLTimeStampFromDate(date), "2018-07-26 10:36:15");
+}
+
+@Test
+public void testGetSQLTimeStampFromDate() throws Exception
+{
+    String sqlTimeStampString = "2018-07-26 10:36:15";
+    Date date = DateTools.getDateFromSqlTimeStampString(sqlTimeStampString);
+    String timeString = DateTools.getSQLTimeStampFromDate(date).substring(11, 19);
+    System.out.println(timeString);
+    assertEquals("FALSCHER TIME_STRING", "10:36:15", timeString);
+}
+
+@Test
+public void testGetMondayXWeeksBeforeKWSqlDateIntIntInt() throws Exception
+{
+    System.out.println(DateTools.getMondayXWeeksBeforeKW(1, 0));
+}
+
+@Test
+public void testGetTimeStampFromTimeStampString() throws Exception
+{
+    String testTimestampString = "2019-07-11 14:50:34";
+    Timestamp ts = DateTools.getTimeStampFromTimeStampString(testTimestampString);
+    long time = ts.getTime();
+    assertEquals(1562849434000l, time);
+}
+
+@Test
+public void testGetTimeStampFromISO8601TimeStampString() throws Exception
+{
+    
+    String testTimestampString = "2019-07-10T20:23:56+02:00";
+    Timestamp ts = DateTools.getTimeStampFromISO8601TimeStampString(testTimestampString);
+    long time = ts.getTime();
+    System.out.println(time);
+    assertEquals(1562783036000l, time);
 }
 
 
