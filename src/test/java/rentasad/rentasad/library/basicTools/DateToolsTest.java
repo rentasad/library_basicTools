@@ -1,9 +1,7 @@
-package org.gustini.library.basicTools;
+package rentasad.rentasad.library.basicTools;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.Timestamp;
 import java.time.DayOfWeek;
@@ -12,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class DateToolsTest
 {

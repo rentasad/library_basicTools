@@ -1,12 +1,12 @@
-package org.gustini.library.basicTools;
+package rentasad.rentasad.library.basicTools;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import net.lingala.zip4j.model.FileHeader;
 
@@ -14,7 +14,7 @@ public class ZipToolTest
 {
 	boolean startTest;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		String osString = System.getProperty("os.name");
@@ -35,7 +35,7 @@ public class ZipToolTest
 
 	}
 
-	@After
+	@AfterEach
 	/**
 	 * 
 	 * Description: 

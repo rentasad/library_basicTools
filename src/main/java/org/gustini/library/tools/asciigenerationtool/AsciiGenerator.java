@@ -11,10 +11,11 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-import org.gustini.library.basicTools.NumberTools;
 import org.gustini.library.tools.asciigenerationtool.objects.AsciObjectInterface;
 import org.gustini.library.tools.asciigenerationtool.objects.AsciiDescriptionObject;
 import org.gustini.library.tools.asciigenerationtool.objects.AsciiGeneratorException;
+
+import rentasad.rentasad.library.basicTools.NumberTools;
 
 
 /**

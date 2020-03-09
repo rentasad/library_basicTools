@@ -1,4 +1,4 @@
-package org.gustini.library.basicTools;
+package rentasad.rentasad.library.basicTools;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
@@ -912,7 +912,7 @@ public class DateTools
     public static List<Date> getDateListBetweenTwoDates(Date dateFrom, Date dateTo)
     {
 
-        List<Date> dateList = new ArrayList<>();
+        List<Date> dateList = new ArrayList<Date>();
 
         if (dateFrom.before(dateTo))
         {
@@ -942,7 +942,7 @@ public class DateTools
      */
     public static List<Date> getDatesFromKWMondayToFriday(int year, int kw)
     {
-        List<Date> daysOfWeek = new ArrayList<>();
+        List<Date> daysOfWeek = new ArrayList<Date>();
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.WEEK_OF_YEAR, kw);

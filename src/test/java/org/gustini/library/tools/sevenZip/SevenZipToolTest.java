@@ -2,22 +2,11 @@ package org.gustini.library.tools.sevenZip;
 
 import java.io.File;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SevenZipToolTest
 {
 
-	@Before
-	public void setUp() throws Exception
-	{
-	}
-
-	@After
-	public void tearDown() throws Exception
-	{
-	}
 
 	@Test
 	public void testZipSingleFile() throws Exception
