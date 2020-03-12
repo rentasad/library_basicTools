@@ -4,10 +4,11 @@ package gustini.library.tools.asciigenerationtool;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.gustini.library.tools.asciigenerationtool.AsciiGenerator;
-import org.gustini.library.tools.asciigenerationtool.objects.AsciiDescriptionObject;
-import org.gustini.library.tools.asciigenerationtool.objects.AsciiFieldFormatEnum;
 import org.junit.jupiter.api.Test;
+
+import rentasad.library.tools.asciigenerationtool.AsciiGenerator;
+import rentasad.library.tools.asciigenerationtool.objects.AsciiDescriptionObject;
+import rentasad.library.tools.asciigenerationtool.objects.AsciiFieldFormatEnum;
 
 public class AsciiGeneratorTest
 {
