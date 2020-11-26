@@ -87,7 +87,10 @@ public class CommandExecuter
         String startDir = jobConfigMap.get(PARAMETER_START_DIR);
         String vmArguments= jobConfigMap.get(PARAMETER_VM_ARGUMENTS);
         String runningArguments = jobConfigMap.get(PARAMETER_RUNNING_ARGUMENTS);
-        String command = "cmd /c " + jvmPath + " " + vmArguments + " -classpath " +jarFilePath + " " + startClass + " " + runningArguments;
+        /*
+         * Update: JVM-Path wurde in Anführungsstriche gesetzt, falls Leerzeichen im Pfad enthalten sind.
+         */
+        String command = "cmd /c \"" + jvmPath + "\" " + vmArguments + " -classpath " +jarFilePath + " " + startClass + " " + runningArguments;
         System.out.println(command);
         Runtime rt = Runtime.getRuntime();
         Process proc = rt.exec(command, null, new File(startDir));
