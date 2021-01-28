@@ -1,7 +1,10 @@
 package rentasad.library.basicTools;
 
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.sql.Timestamp;
 import java.time.DayOfWeek;
@@ -11,8 +14,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import org.junit.jupiter.api.Test;
-
-import rentasad.library.basicTools.DateTools;
 
 public class DateToolsTest
 {

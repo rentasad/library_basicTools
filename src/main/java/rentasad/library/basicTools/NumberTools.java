@@ -11,7 +11,8 @@ public class NumberTools
     {
         try
         {
-            final double d = Double.parseDouble(number);
+            @SuppressWarnings("unused")
+			final double d = Double.parseDouble(number);
         } catch (NumberFormatException nfe)
         {
             return false;

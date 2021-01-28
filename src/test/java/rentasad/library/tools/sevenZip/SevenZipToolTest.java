@@ -4,8 +4,6 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
-import rentasad.library.tools.sevenZip.SevenZipTool;
-
 public class SevenZipToolTest
 {
 

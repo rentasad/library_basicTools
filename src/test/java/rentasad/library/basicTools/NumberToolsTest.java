@@ -2,8 +2,6 @@ package rentasad.library.basicTools;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import rentasad.library.basicTools.NumberTools;
-
 public class NumberToolsTest
 {
 

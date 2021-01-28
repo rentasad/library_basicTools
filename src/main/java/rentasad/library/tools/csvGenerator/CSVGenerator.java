@@ -9,7 +9,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.List;
 
-import rentasad.library.tools.csvGenerator.ICsvGeneratorDataEntry;
 import rentasad.library.tools.exceptions.UnknownFieldIntException;
 
 
