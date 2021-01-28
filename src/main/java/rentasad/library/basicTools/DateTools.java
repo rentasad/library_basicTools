@@ -172,7 +172,7 @@ public class DateTools
         {
             if (dateString != null && dateString.length() >= 8)
             {
-                int year = (dateString.length() >= 10) ? new Integer(dateString.substring(6, 10)) : new Integer(dateString.substring(6, 8)) + 2000;
+                int year = (dateString.length() >= 10) ?  Integer.valueOf(dateString.substring(6, 10)) :  Integer.valueOf(dateString.substring(6, 8)) + 2000;
                 int month = Integer.parseInt(dateString.substring(3, 5));
                 int day = Integer.parseInt(dateString.substring(0, 2));
                 /*
@@ -314,7 +314,7 @@ public class DateTools
         Long timeBefore = beforeDate.getTime();
         Long timeAfter = afterDate.getTime();
         long differenz = timeAfter - timeBefore;
-        int tage = new Long(Math.round((double) differenz / (24. * 60. * 60. * 1000.))).intValue();
+        int tage = Long.valueOf(Math.round((double) differenz / (24. * 60. * 60. * 1000.))).intValue();
         return tage;
     }
 
@@ -379,8 +379,8 @@ public class DateTools
     {
         GregorianCalendar calendar = new GregorianCalendar();
         int month = calendar.get(GregorianCalendar.MONTH) + 1;
-        String dayString = getInt2StringWithForwardZero(new Integer(calendar.get(GregorianCalendar.DAY_OF_MONTH)));
-        String monthString = getInt2StringWithForwardZero(new Integer(month));
+        String dayString = getInt2StringWithForwardZero(Integer.valueOf(calendar.get(GregorianCalendar.DAY_OF_MONTH)));
+        String monthString = getInt2StringWithForwardZero(Integer.valueOf(month));
         String yearString = Integer.toString(calendar.get(GregorianCalendar.YEAR)).toString();
         String hourString = getInt2StringWithForwardZero(calendar.get(GregorianCalendar.HOUR_OF_DAY));
         String minutesString = getInt2StringWithForwardZero(calendar.get(GregorianCalendar.MINUTE));
@@ -766,7 +766,7 @@ public class DateTools
     public static int getMinutesFromMilliseconds(long milliseconds)
     {
         long minutes = milliseconds / LONG_TIME_MINUTE;
-        Integer minutesInteger = new Long(minutes).intValue();
+        Integer minutesInteger = Long.valueOf(minutes).intValue();
         return minutesInteger;
 
     }
