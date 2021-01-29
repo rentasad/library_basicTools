@@ -13,7 +13,13 @@ import net.lingala.zip4j.model.FileHeader;
 public class ZipToolTest
 {
 	boolean startTest;
-
+	final String PATH_TO_7ZIP_EXE = "resources/7z/7z.exe";
+	final String ZIP_FILENAME_ENCRYPTED = "resources/tests/zip/zipfile/loremIpsum_encrypted.zip";
+	final String ZIP_FILENAME = "resources/tests/zip/zipfile/loremIpsum.zip";
+	final String DESTINATION_PATH = "resources/tests/zip/extracted";
+	final String password = "raf3g7kivo";
+	final String DESTINATION_FILE = DESTINATION_PATH + "/loremIpsum.txt";
+	ZipTool tool = new ZipTool(PATH_TO_7ZIP_EXE);
 	@BeforeEach
 	public void setUp() throws Exception
 	{
@@ -57,14 +63,13 @@ public class ZipToolTest
 			 */
 			// String os = System.getProperty("os.name");
 			System.out.println();
-			String pathTo7ZipExe = "ressources/Gustini/Library/tools/FileTools/7z/7z";
-			String zipFileName = "ressources/Gustini/Library/tools/FileTools/enrypted.csv.zip";
-			String destinationPath = "ressources/Gustini/Library/tools/FileTools";
-			String password = "grAEfin-11";
-			ZipTool tool = new ZipTool(pathTo7ZipExe);
-			tool.extractEncryptedZip(zipFileName, destinationPath, password);
-			boolean exist = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv").exists();
-			File extractedFile = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv");
+			
+			
+			
+			ZipTool tool = new ZipTool(PATH_TO_7ZIP_EXE);
+			tool.extractEncryptedZip(ZIP_FILENAME_ENCRYPTED, DESTINATION_PATH, password);
+			boolean exist = new File(DESTINATION_PATH + "/loremIpsum.txt").exists();
+			File extractedFile = new File(DESTINATION_PATH + "/loremIpsum.txt");
 			if (extractedFile.exists())
 			{
 				extractedFile.delete();
@@ -74,27 +79,27 @@ public class ZipToolTest
 
 	}
 
-	@Test
-	public void testExtractEncryptedAES256ZipFile() throws Exception
-	{
-		/*
-		 * Passwort fuer ZIP-Datei 123456
-		 */
-		if (startTest)
-		{
-			String zipFileName = "ressources/Gustini/Library/tools/FileTools/encryptedAES-256.zip";
-			String destinationPath = "ressources/Gustini/Library/tools/FileTools";
-			String password = "123456";
-			ZipTool.extractZipFile(zipFileName, destinationPath, password);
-			boolean exist = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv").exists();
-			File extractedFile = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv");
-			if (extractedFile.exists())
-			{
-				extractedFile.delete();
-			}
-			assertTrue(exist);
-		}
-	}
+//	@Test
+//	public void testExtractEncryptedAES256ZipFile() throws Exception
+//	{
+//		/*
+//		 * Passwort fuer ZIP-Datei 123456
+//		 */
+//		if (startTest)
+//		{
+//			String zipFileName = "ressources/Gustini/Library/tools/FileTools/encryptedAES-256.zip";
+//			String destinationPath = "ressources/Gustini/Library/tools/FileTools";
+//			String password = "123456";
+//			ZipTool.extractZipFile(zipFileName, destinationPath, password);
+//			boolean exist = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv").exists();
+//			File extractedFile = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv");
+//			if (extractedFile.exists())
+//			{
+//				extractedFile.delete();
+//			}
+//			assertTrue(exist);
+//		}
+//	}
 
 	@Test
 	public void testExtractEncryptedZipCryptoZipFile() throws Exception
@@ -105,12 +110,9 @@ public class ZipToolTest
 			 * Passwort fuer ZIP-Datei 123456
 			 */
 
-			String zipFileName = "ressources/Gustini/Library/tools/FileTools/encryptedZipCrypto.zip";
-			String destinationPath = "ressources/Gustini/Library/tools/FileTools/";
-			String password = "123456";
-			ZipTool.extractZipFile(zipFileName, destinationPath, password);
-			boolean exist = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv").exists();
-			File extractedFile = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv");
+			ZipTool.extractZipFile(ZIP_FILENAME, DESTINATION_PATH, password);
+			boolean exist = new File(DESTINATION_FILE).exists();
+			File extractedFile = new File(DESTINATION_FILE);
 			if (extractedFile.exists())
 			{
 				extractedFile.delete();
@@ -124,11 +126,13 @@ public class ZipToolTest
 	{
 		if (startTest)
 		{
-			String zipFileName = "ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.zip";
-			String destinationPath = "ressources/Gustini/Library/tools/FileTools";
+			String zipFileName = "resources/tests/zip/zipfile/loremIpsum.zip";
+			String destinationPath = "resources/tests/zip/extracted";
+			
 			ZipTool.extractZipFile(zipFileName, destinationPath);
-			boolean exist = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv").exists();
-			File extractedFile = new File("ressources/Gustini/Library/tools/FileTools/O_DVU1201_IZ_1_2201041504_220115_114780.csv");
+			String extractedFileName = "resources/tests/zip/extracted/loremIpsum.txt";
+			boolean exist = new File(extractedFileName).exists();
+			File extractedFile = new File(extractedFileName);
 			if (extractedFile.exists())
 			{
 				extractedFile.delete();
@@ -143,11 +147,11 @@ public class ZipToolTest
 		if (startTest)
 		{
 			boolean success = false;
-			String zipFileName = "ressources/Gustini/Library/tools/FileTools/enrypted.csv.zip";
-			FileHeader[] headers = ZipTool.getFileHeadersFromZipFile(zipFileName);
+			
+			FileHeader[] headers = ZipTool.getFileHeadersFromZipFile(ZIP_FILENAME_ENCRYPTED);
 			FileHeader fileheader = headers[0];
 			String fileName = fileheader.getFileName();
-			if (fileName.equalsIgnoreCase("O_DVU1201_IZ_1_2201041504_220115_114780.csv"))
+			if (fileName.equalsIgnoreCase("loremIpsum.txt"))
 			{
 				success = true;
 			}

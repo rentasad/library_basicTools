@@ -221,7 +221,7 @@ public void testGetSQLTimeStampFromDate() throws Exception
     Date date = DateTools.getDateFromSqlTimeStampString(sqlTimeStampString);
     String timeString = DateTools.getSQLTimeStampFromDate(date).substring(11, 19);
     System.out.println(timeString);
-    assertEquals("FALSCHER TIME_STRING", "10:36:15", timeString);
+    assertEquals("10:36:15", timeString);
 }
 
 @Test
