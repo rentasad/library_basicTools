@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20180130</version>
+			<version>20201115</version>
 		</dependency>
 		<dependency>
 			<groupId>net.lingala.zip4j</groupId>
