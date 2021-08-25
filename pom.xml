@@ -23,9 +23,6 @@
 				<configuration>
 					<!-- <source>1.8</source> -->
 					<release>15</release>
-					<compilerArgs>
-						--enable-preview
-					</compilerArgs>
 				</configuration>
 			</plugin>
 			<!--  The Maven-Surefire-Plugin is needed to make Unittests while building-->
