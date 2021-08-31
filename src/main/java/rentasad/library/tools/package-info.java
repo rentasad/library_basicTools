@@ -1,4 +1,0 @@
-/**
- * 
- */
-package rentasad.library.tools;
