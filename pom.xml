@@ -108,16 +108,21 @@
 		</pluginManagement>
 	</build>
 	<modules>
-		<module>dateTools</module>
-		<module>numberTools</module>
-		<module>stringTools</module>
-		<module>zipTools</module>
-		<module>operatingSystemTool</module>
-		<module>fileOperator</module>
-		<module>commandExecutionTool</module>
-		<module>adressTools</module>
-		<module>asciigenerationtool</module>
-		<module>csvGenerator</module>
-		<module>exceptions</module>
+		<module>rentasad.library.basicTools.dateTools</module>
+		<module>rentasad.library.basicTools.numberTools</module>
+		<module>rentasad.library.basicTools.stringTools</module>
+		<module>rentasad.library.basicTools.zipTools</module>
+		<module>rentasad.library.basicTools.operatingSystemTool</module>
+		<module>rentasad.library.basicTools.fileOperator</module>
+		<module>rentasad.library.basicTools.commandExecutionTool</module>
+		<module>rentasad.library.basicTools.adressTools</module>
+		<module>rentasad.library.basicTools.asciigenerationtool</module>
+		<module>rentasad.library.basicTools.csvGenerator</module>
+		<module>rentasad.library.basicTools.exceptions</module>
+		<module>rentasad.library.basicTools.emailSendTool</module>
+		<module>rentasad.library.basicTools.excelGenerator</module>
+		<module>rentasad.library.basicTools.ftpUtil</module>
+		<module>rentasad.library.basicTools.configFileTool</module>
+		<module>rentasad.library.basicTools.logging</module>
 	</modules>
 </project>
