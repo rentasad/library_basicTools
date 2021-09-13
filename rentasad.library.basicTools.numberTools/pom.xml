@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>P2.0.0</version>
+		<version>B2.0.0</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
@@ -78,4 +78,8 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<description>
+	&lt;groupId&gt;rentasad&lt;/groupId&gt;
+	&lt;artifactId&gt;rentasad.library.basicTools.numberTools&lt;/artifactId&gt;
+      &lt;version&gt;${basicToolParentVersion} &lt;/version&gt;</description>
 </project>

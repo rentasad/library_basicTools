@@ -6,11 +6,21 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>P2.0.0</version>
+		<version>B2.0.0</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
 	<artifactId>rentasad.library.basicTools.dateTools</artifactId>
+	
+	<!-- 
+	FOR COPY & PASTE
+		<dependency>
+			<groupId>rentasad</groupId>
+			<artifactId>rentasad.library.basicTools.dateTools</artifactId>
+			<version>${basicToolParentVersion}</version>
+		</dependency>
+	
+	 -->
 
 	<name>rentasad.library.basicTools.dateTools</name>
 	<!-- FIXME change it to the project's website -->
