@@ -30,17 +30,17 @@
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.stringTools</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.configFileTool</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.exceptions</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
 		<dependency>

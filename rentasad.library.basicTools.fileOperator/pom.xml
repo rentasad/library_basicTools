@@ -40,8 +40,8 @@ COPY & PASTE FOR INSERT:
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
-			<artifactId>dateTools</artifactId>
-			<version>1.0.0</version>
+			<artifactId>rentasad.library.basicTools.dateTools</artifactId>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 	</dependencies>
 

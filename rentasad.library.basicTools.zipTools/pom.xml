@@ -39,18 +39,18 @@
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
-			<artifactId>commandExecutionTool</artifactId>
-			<version>1.0.0</version>
+			<artifactId>rentasad.library.basicTools.commandExecutionTool</artifactId>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
-			<artifactId>stringTools</artifactId>
-			<version>1.0.0</version>
+			<artifactId>rentasad.library.basicTools.stringTools</artifactId>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
-			<artifactId>fileOperator</artifactId>
-			<version>1.0.0</version>
+			<artifactId>rentasad.library.basicTools.fileOperator</artifactId>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.sf.sevenzipjbinding/sevenzipjbinding -->
 		<dependency>

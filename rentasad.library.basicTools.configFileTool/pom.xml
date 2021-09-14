@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.logging</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.ini4j/ini4j HANDLING INI-FILE 

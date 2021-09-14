@@ -31,8 +31,8 @@
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
-			<artifactId>exceptions</artifactId>
-			<version>1.0.0</version>
+			<artifactId>rentasad.library.basicTools.exceptions</artifactId>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 	</dependencies>
 

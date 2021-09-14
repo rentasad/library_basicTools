@@ -11,7 +11,6 @@
 
 	<groupId>rentasad</groupId>
 	<artifactId>rentasad.library.basicTools.ftpUtil</artifactId>
-	<!-- <version>1.0.0</version> -->
 
 	<name>rentasad.library.basicTools.ftpUtil</name>
 	<!-- FIXME change it to the project's website -->
@@ -33,17 +32,17 @@
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.dateTools</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 				<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.numberTools</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.configFileTool</artifactId>
-			<version>1.0.0</version>
+			<version>${basicToolParentVersion}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>
