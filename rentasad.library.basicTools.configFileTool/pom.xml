@@ -92,4 +92,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<description>&lt;groupId&gt;rentasad&lt;/groupId&gt;
+&lt;artifactId&gt;rentasad.library.basicTools.configFileTool&lt;/artifactId&gt;
+&lt;version&gt;${basicToolParentVersion}&lt;/version&gt;</description>
 </project>
