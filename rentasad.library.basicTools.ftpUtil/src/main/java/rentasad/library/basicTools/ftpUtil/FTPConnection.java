@@ -166,6 +166,7 @@ public class FTPConnection
             this.ftpClient.connect(this.ftpSettings.getFtpHost(), this.ftpSettings.getFtpPort());
             if (this.showMessages)
             {
+            	ftpClient.enterLocalPassiveMode();
                 System.out.println(ftpClient.getReplyString());
                 this.messageLog.add(ftpClient.getReplyString());
             }
