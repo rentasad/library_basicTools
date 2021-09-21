@@ -34,6 +34,13 @@ public class CSVGenerator
 	private String satzTrenner;
 	private boolean writeHeader;
 
+	
+	/**
+	 * 
+	 * @param trennzeichen - Trennzeichen der CSV-Datei
+	 * @param satzTrenner - Satztrenner
+	 * @param writeHeader - soll Header geschrieben werden?
+	 */
 	public CSVGenerator(
 						String trennzeichen,
 						String satzTrenner,
