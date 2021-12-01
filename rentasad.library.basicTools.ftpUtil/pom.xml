@@ -63,6 +63,11 @@
 			<artifactId>jsch</artifactId>
 			<version>0.1.54</version>
 		</dependency>
+		<dependency>
+			<groupId>rentasad</groupId>
+			<artifactId>rentasad.library.db.mysql</artifactId>
+			<version>${dbToolParentVersion}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

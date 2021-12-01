@@ -28,6 +28,7 @@
 		-->
 		<!-- USING WITH ${basicToolParentVersion} -->
 		<basicToolParentVersion>B2.0.0</basicToolParentVersion>
+		<dbToolParentVersion>D2.0.0</dbToolParentVersion> 
 	</properties>
 	<dependencies>
 		<dependency>
