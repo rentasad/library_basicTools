@@ -11,6 +11,7 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -18,7 +19,6 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 
-import org.apache.log4j.Level;
 import org.ini4j.ConfigParser.ConfigParserException;
 import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
@@ -103,7 +103,7 @@ public class ConfigFileTool extends AbstractLoggingListener
         if (configFile.exists())
         {
             String message = String.format("Section %s of ConfigFile %s loaded.", sektionString, new File(fileName).getAbsolutePath());
-            logMessage(message, Level.INFO_INT);
+            logMessage(message, java.util.logging.Level.FINER);
 //            System.out.println(new File(fileName).getAbsolutePath());
             Map<String, String> konfigMap = new HashMap<String, String>();
             Wini ini = new Wini();
@@ -120,7 +120,7 @@ public class ConfigFileTool extends AbstractLoggingListener
             } else
             {
                 message = "Folgende Section wurde in der INI-Datei nicht gefunden: " + sektionString;
-                logMessage(message, Level.INFO_INT);
+                logMessage(message, Level.SEVERE);
                 throw new ConfigFileToolException(message);
             }
 

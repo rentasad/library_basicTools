@@ -2,9 +2,10 @@ package rentasad.library.logging;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+
 
 public abstract class AbstractLoggingListener
 {
@@ -13,7 +14,6 @@ public abstract class AbstractLoggingListener
 
     public AbstractLoggingListener()
     {
-        // TODO Auto-generated constructor stub
     }
 
     public static void addLogger(Logger logger)
@@ -40,14 +40,14 @@ public abstract class AbstractLoggingListener
     * @param levelInt (from {@link Level}
     * Creation: 10.03.2016 by mst
     */
-   public static void logMessage(String message, int  levelInt)
+   public static void logMessage(String message, Level level)
    {
        if (!loggerList.isEmpty())
        {
            for (Logger logger : loggerList)
            {
                
-               logger.log(Level.toLevel(levelInt), message);
+               logger.log(level, message);
            }
        }
    }
@@ -65,7 +65,7 @@ public static void logError(String message, Exception e)
        {
            for (Logger logger : loggerList)
            {
-               logger.log(Level.ERROR, message);
+               logger.log(Level.WARNING, message);
            }
        }
    }
