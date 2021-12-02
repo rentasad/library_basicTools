@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.0.0</version>
+		<version>B2.1.0</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
@@ -17,7 +17,7 @@ COPY & PASTE FOR INSERT:
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.fileOperator</artifactId>
-			<version>B2.0.0</version>
+			<version>B2.1.0</version>
 		</dependency>
  -->
 

@@ -1,8 +1,6 @@
 package rentasad.library.logging;
 
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Logger;
-import org.apache.log4j.SimpleLayout;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,10 +17,10 @@ import org.apache.log4j.SimpleLayout;
  */
 public class LoggingToolkit
 {
+	private static final String LOGGER_DEFAULT_NAME = "DEFAULT_LOGGER";
     private static Logger logger = null;
     private LoggingToolkit()
     {
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -32,14 +30,22 @@ public class LoggingToolkit
     * @return
     * Creation: 10.03.2016 by mst
     */
+   public static Logger getLogger(String loggerName)
+   {
+       if (logger == null)
+       {
+           logger = Logger.getLogger(loggerName);
+
+       }
+       return logger;
+   }
+   
    public static Logger getLogger()
    {
        if (logger == null)
        {
-           logger = org.apache.log4j.Logger.getRootLogger();
-           SimpleLayout layout = new SimpleLayout();
-           ConsoleAppender consoleAppender = new ConsoleAppender(layout);
-           logger.addAppender(consoleAppender);
+           logger = Logger.getLogger(LOGGER_DEFAULT_NAME);
+
        }
        return logger;
    }
