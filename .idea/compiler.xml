@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rentasad.library.basicTools.zipTools" />
         <module name="rentasad.library.basicTools.configFileTool" />
-        <module name="rentasad.library.basicTools.ftpUtil" />
         <module name="rentasad.library.basicTools.logging" />
         <module name="rentasad.library.basicTools.waehrungskursTool" />
         <module name="rentasad.library.basicTools.exceptions" />
@@ -25,5 +24,8 @@
         <module name="rentasad.library.basicTools.excelGenerator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="rentasad.library.basicTools.ftpUtil" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
