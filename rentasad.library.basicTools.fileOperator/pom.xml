@@ -17,7 +17,7 @@ COPY & PASTE FOR INSERT:
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.fileOperator</artifactId>
-			<version>B2.2.0</version>
+			<version>B2.2.1</version>
 		</dependency>
  -->
 
