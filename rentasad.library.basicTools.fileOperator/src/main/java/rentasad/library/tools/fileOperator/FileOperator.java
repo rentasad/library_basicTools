@@ -10,6 +10,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,6 +32,18 @@ import rentasad.library.basicTools.dateTool.DateTools;
  */
 public class FileOperator
 {
+
+    /**
+     * return URL to path from file in resources
+     * @param path
+     * @return
+     */
+    public static URL getUrlFromResourceFile(final String path)
+    {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        return  classLoader.getResource(path);
+    }
+
 
     /**
      * Gibt den Inhalt einer Datei als String zurueck
