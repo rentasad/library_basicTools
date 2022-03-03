@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.2.2</version>
+		<version>B2.2.3</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
