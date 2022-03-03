@@ -44,6 +44,49 @@ public class FileOperator
         return  classLoader.getResource(path);
     }
 
+    /**
+     * return URL to path from file in resources
+     * @param path
+     * @return
+     */
+    public static InputStream getInputStreamFromResourceFile(final String path) throws IOException
+    {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(path);
+        // the stream holding the file content
+        if (inputStream == null) {
+            throw new FileNotFoundException("file not found! " + path);
+        } else
+        {
+
+            return inputStream;
+        }
+    }
+
+    /**
+     * return value of file as String from resources
+     *
+     * @param path relative Path in resource to readable file
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+
+    public static String getFileValueFromResources(final String path) throws IOException
+    {
+        String fileValue = null;
+        BufferedReader br = new BufferedReader(new InputStreamReader(getInputStreamFromResourceFile(path)));
+        StringBuffer contentOfFile = new StringBuffer();
+        String line;
+        while ((line = br.readLine()) != null)
+        {
+            contentOfFile.append(line + "\r\n");
+        }
+        fileValue = contentOfFile.toString();
+
+        br.close();
+        return fileValue;
+    }
 
     /**
      * Gibt den Inhalt einer Datei als String zurueck

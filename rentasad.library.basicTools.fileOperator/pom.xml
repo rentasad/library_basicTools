@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.2.1</version>
+		<version>B2.2.2</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
@@ -17,13 +17,11 @@ COPY & PASTE FOR INSERT:
 		<dependency>
 			<groupId>rentasad</groupId>
 			<artifactId>rentasad.library.basicTools.fileOperator</artifactId>
-			<version>B2.2.1</version>
+			<version>B2.2.2</version>
 		</dependency>
  -->
 
 	<name>rentasad.library.basicTools.fileOperator</name>
-	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,7 +33,7 @@ COPY & PASTE FOR INSERT:
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.4.0</version>
+			<version>5.8.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

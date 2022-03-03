@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.2.1</version>
+		<version>B2.2.2</version>
 	</parent>
 	<groupId>rentasad</groupId>
 	<artifactId>rentasad.library.basicTools.waehrungskursTool</artifactId>
