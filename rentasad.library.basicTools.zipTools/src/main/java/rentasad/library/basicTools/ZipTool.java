@@ -1,21 +1,16 @@
 package rentasad.library.basicTools;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
+import net.lingala.zip4j.model.FileHeader;
+import rentasad.library.tools.commandExecutionTool.CommandExecuter;
+import rentasad.library.tools.fileOperator.FileOperator;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipException;
-import java.util.zip.ZipFile;
-
-import net.lingala.zip4j.model.FileHeader;
-import rentasad.library.tools.commandExecutionTool.CommandExecuter;
-import rentasad.library.tools.fileOperator.FileOperator;
 
 /**
  *
@@ -88,9 +83,9 @@ public class ZipTool
     }
 
     @SuppressWarnings("unchecked")
-    public static FileHeader[] getFileHeadersFromZipFile(final String fileName) throws net.lingala.zip4j.exception.ZipException
+    public static FileHeader[] getFileHeadersFromZipFile(final String fileName) throws ZipException
     {
-        net.lingala.zip4j.core.ZipFile zipFile = new net.lingala.zip4j.core.ZipFile(fileName);
+        ZipFile zipFile = new ZipFile(fileName);
         @SuppressWarnings("rawtypes")
         List fileHeaders = zipFile.getFileHeaders();
         return (FileHeader[]) fileHeaders.toArray(new FileHeader[0]);
@@ -122,18 +117,18 @@ public class ZipTool
      * @param password
      * @return
      * @throws IOException
-     * @throws ZipException
+     * @throws net.lingala.zip4j.exception.ZipException
      * @throws net.lingala.zip4j.exception.ZipException
      */
 
-    public static boolean extractZipFile(final String fileName, final String destinationPath, String password) throws IOException, ZipException, net.lingala.zip4j.exception.ZipException
+    public static boolean extractZipFile(final String fileName, final String destinationPath, String password) throws IOException, ZipException
     {
         boolean success = false;
-        net.lingala.zip4j.core.ZipFile zipFile = new net.lingala.zip4j.core.ZipFile(fileName);
+        ZipFile zipFile = new ZipFile(fileName);
 
         if (zipFile.isEncrypted())
         {
-            zipFile.setPassword(password);
+            zipFile.setPassword(password.toCharArray());
             zipFile.extractAll(destinationPath);
             success = true;
 
@@ -157,7 +152,7 @@ public class ZipTool
      */
     public static boolean extractZipFile(final String fileName, final String destinationPath) throws IOException
     {
-        ZipFile zipFile = new ZipFile(fileName);
+        java.util.zip.ZipFile zipFile = new java.util.zip.ZipFile(fileName);
         Enumeration<? extends ZipEntry> enu = zipFile.entries();
 
         while (enu.hasMoreElements())
@@ -169,8 +164,7 @@ public class ZipTool
                 System.out.println("Dateiname    " + zipEntry.getName());
                 System.out.println("Dateigroesse " + zipEntry.getSize());
                 System.out.println("komprimiert  " + zipEntry.getCompressedSize());
-                BufferedInputStream bis = null;
-                bis = new BufferedInputStream(zipFile.getInputStream(zipEntry));
+                BufferedInputStream bis = new BufferedInputStream(zipFile.getInputStream(zipEntry));
                 // Wegen fehlerhafter tests auskommentiert und an Ende der Datei gestellt.
                 // zipFile.close();
                 byte[] buffer;
