@@ -28,7 +28,7 @@
 		VERSION PROPERTY 
 		-->
 		<!-- USING WITH ${basicToolParentVersion} -->
-		<basicToolParentVersion>B2.2.1</basicToolParentVersion>
+		<basicToolParentVersion>B2.2.3</basicToolParentVersion>
 		<dbToolParentVersion>D2.0.0</dbToolParentVersion> 
 	</properties>
 	<dependencies>
@@ -115,7 +115,6 @@
 		<module>rentasad.library.basicTools.dateTools</module>
 		<module>rentasad.library.basicTools.numberTools</module>
 		<module>rentasad.library.basicTools.stringTools</module>
-		<module>rentasad.library.basicTools.zipTools</module>
 		<module>rentasad.library.basicTools.operatingSystemTool</module>
 		<module>rentasad.library.basicTools.fileOperator</module>
 		<module>rentasad.library.basicTools.commandExecutionTool</module>
@@ -128,5 +127,6 @@
 		<module>rentasad.library.basicTools.configFileTool</module>
 		<module>rentasad.library.basicTools.logging</module>
 		<module>rentasad.library.basicTools.waehrungskursTool</module>
+		<module>rentasad.library.basicTools.zipTools</module>
 	</modules>
 </project>
