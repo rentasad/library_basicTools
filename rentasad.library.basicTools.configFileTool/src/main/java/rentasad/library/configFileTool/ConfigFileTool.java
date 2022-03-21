@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.Base64;
 import java.util.HashMap;
@@ -24,6 +25,7 @@ import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
 import org.ini4j.Wini;
 
+import org.jetbrains.annotations.NotNull;
 import rentasad.library.logging.AbstractLoggingListener;
 
 
@@ -41,7 +43,7 @@ import rentasad.library.logging.AbstractLoggingListener;
  *
  *         Tool zum Erstellen und Auslesen von INI-Dateien
  */
-public class ConfigFileTool extends AbstractLoggingListener
+public class  ConfigFileTool extends AbstractLoggingListener
 {
     private static final char[] PASSWORD = "48joVKpQ+jIkzy-oW!0A".toCharArray();
     private static final byte[] SALT =
@@ -131,6 +133,26 @@ public class ConfigFileTool extends AbstractLoggingListener
 
         }
     }
+
+    /**
+     *
+     * @param fileName
+     * @param sektionString
+     * @return
+     * @throws IOException
+     * @throws ConfigFileToolException
+     */
+    public static Map<String, String> readConfigurationFromResources(final String fileName, final String sektionString) throws IOException,
+            ConfigFileToolException
+    {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+
+        URL resourceUrl = classLoader.getResource(fileName);
+        String resourceFilename =resourceUrl.getFile();
+        return readConfiguration(resourceFilename, sektionString);
+    }
+    
+    
     /**
      *
      * Description:
