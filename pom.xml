@@ -28,7 +28,7 @@
 		VERSION PROPERTY 
 		-->
 		<!-- USING WITH ${basicToolParentVersion} -->
-		<basicToolParentVersion>B2.2.5</basicToolParentVersion>
+		<basicToolParentVersion>B2.3.0</basicToolParentVersion>
 		<dbToolParentVersion>D2.2.2</dbToolParentVersion>
 	</properties>
 	<dependencies>
