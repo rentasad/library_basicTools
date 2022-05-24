@@ -211,6 +211,35 @@ public class  ConfigFileTool extends AbstractLoggingListener
 
     /**
      *
+     * Description:
+     *
+     * @param fileName
+     * @return Map<String, Map<String, String>>
+     * @throws ConfigFileToolException
+     * Creation: 23.02.2016 by mst
+     */
+    public static Map<String, Map<String, String>> readIniFileWithAllSectionsFromResources(final String fileName) throws ConfigFileToolException
+    {
+        Map<String, Map<String, String>> sectionConfigMap = new HashMap<>();
+        String[] sections;
+
+        try
+        {
+            sections = getSectionsFromResources(fileName);
+            for (String sectionName : sections)
+            {
+                sectionConfigMap.put(sectionName, readConfigurationFromResources(fileName, sectionName));
+            }
+
+        } catch (IOException e)
+        {
+            throw new ConfigFileToolException((e));
+        }
+        return sectionConfigMap;
+    }
+
+    /**
+     *
      * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
      *
      * @param fileName
@@ -230,6 +259,57 @@ public class  ConfigFileTool extends AbstractLoggingListener
         System.out.println(filePatj);
         ini.load(new FileReader(file));
         return sectionSet.toArray(new String[0]);
+    }
+
+    /**
+     *
+     * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
+     *
+     * @param fileName
+     * @return
+     * @throws InvalidFileFormatException
+     * @throws FileNotFoundException
+     * @throws IOException
+     *             Creation: 15.10.2015 by mst
+     */
+    public static String[] getSectionsFromResources(String fileName) throws IOException
+    {
+        byte[] bytes = IOUtils.toByteArray(ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName));
+        InputStream inputStream = ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null)
+        {
+            throw new IllegalArgumentException(fileName + " is not found");
+        }
+        Wini ini = new Wini();
+        Set<String> sectionSet = ini.keySet();
+
+        ini.load(inputStream);
+        return sectionSet.toArray(new String[0]);
+    }
+
+    /**
+     *
+     * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
+     *
+     * @param fileName
+     * @return
+     * @throws InvalidFileFormatException
+     * @throws FileNotFoundException
+     * @throws IOException
+     *             Creation: 15.10.2015 by mst
+     */
+    public static Set<String> getSectionsAsSetFromResource(String fileName) throws IOException
+    {
+        byte[] bytes = IOUtils.toByteArray(ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName));
+        InputStream inputStream = ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null)
+        {
+            throw new IllegalArgumentException(fileName + " is not found");
+        }
+        Wini ini = new Wini();
+        Set<String> sectionSet = ini.keySet();
+        ini.load(inputStream);
+        return sectionSet;
     }
 
     /**

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools</artifactId>
-	<version>B2.3.0</version>
+	<version>B2.4.0</version>
 	<name>rentasad.library.basicTools</name>
 	<url>https://github.com/rentasad/library_basicTools</url>
 	<packaging>pom</packaging>
