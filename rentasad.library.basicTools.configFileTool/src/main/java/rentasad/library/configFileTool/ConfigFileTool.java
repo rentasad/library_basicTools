@@ -1,11 +1,6 @@
 package rentasad.library.configFileTool;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.security.GeneralSecurityException;
 import java.util.Base64;
 import java.util.HashMap;
@@ -19,6 +14,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 
+import org.apache.commons.io.IOUtils;
 import org.ini4j.ConfigParser.ConfigParserException;
 import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
@@ -41,7 +37,8 @@ import rentasad.library.logging.AbstractLoggingListener;
  *
  *         Tool zum Erstellen und Auslesen von INI-Dateien
  */
-public class ConfigFileTool extends AbstractLoggingListener
+
+public class  ConfigFileTool extends AbstractLoggingListener
 {
     private static final char[] PASSWORD = "48joVKpQ+jIkzy-oW!0A".toCharArray();
     private static final byte[] SALT =
@@ -60,21 +57,21 @@ public class ConfigFileTool extends AbstractLoggingListener
      * @param fileName
      * @param sektionString
      *            (Sektion von Variablen einer INI-Datei)
-     * @param konfigMap
+     * @param configMap
      *            ( Enthaelt Key und Value der zu speichernden Variablen.)
      * @throws InvalidFileFormatException
      * @throws IOException
      */
-    public static void writeConfiguration(String fileName, String sektionString, Map<String, String> konfigMap) throws IOException
+    public static void writeConfiguration(String fileName, String sektionString, Map<String, String> configMap) throws IOException
     {
         Wini ini = new Wini();
 
-        String[] keyStringArray = konfigMap.keySet().toArray(new String[0]);
+        String[] keyStringArray = configMap.keySet().toArray(new String[0]);
 
         Ini.Section section = ini.add(sektionString);
         for (int i = 0; i < keyStringArray.length; i++)
         {
-            section.add(keyStringArray[i], konfigMap.get(keyStringArray[i]));
+            section.add(keyStringArray[i], configMap.get(keyStringArray[i]));
         }
         FileOutputStream fileOutputStream = new FileOutputStream(new File(fileName));
         ini.store(fileOutputStream);
@@ -105,8 +102,9 @@ public class ConfigFileTool extends AbstractLoggingListener
             String message = String.format("Section %s of ConfigFile %s loaded.", sektionString, new File(fileName).getAbsolutePath());
             logMessage(message, java.util.logging.Level.FINER);
 //            System.out.println(new File(fileName).getAbsolutePath());
-            Map<String, String> konfigMap = new HashMap<String, String>();
+            Map<String, String> configMap = new HashMap<String, String>();
             Wini ini = new Wini();
+
             ini.load(new FileReader(new File(fileName)));
             Ini.Section section = ini.get(sektionString);
             if (section != null)
@@ -115,7 +113,7 @@ public class ConfigFileTool extends AbstractLoggingListener
                 String[] keysArray = keySet.toArray(new String[0]);
                 for (int i = 0; i < keysArray.length; i++)
                 {
-                    konfigMap.put(keysArray[i], section.get(keysArray[i]));
+                    configMap.put(keysArray[i], section.get(keysArray[i]));
                 }
             } else
             {
@@ -124,13 +122,64 @@ public class ConfigFileTool extends AbstractLoggingListener
                 throw new ConfigFileToolException(message);
             }
 
-            return konfigMap;
+            return configMap;
         } else
         {
             throw new FileNotFoundException(configFile.getAbsolutePath());
 
         }
     }
+
+    /**
+     *
+     * @param fileName
+     * @param sektionString
+     * @return
+     * @throws IOException
+     * @throws ConfigFileToolException
+     */
+    public static Map<String, String> readConfigurationFromResources(final String fileName, final String sektionString) throws IOException,
+            ConfigFileToolException
+    {
+        byte[] bytes = IOUtils.toByteArray(ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName));
+        InputStream inputStream = ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null)
+        {
+            throw new IllegalArgumentException(fileName + " is not found");
+        }
+//        String value =
+//                new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8)).lines().collect(Collectors.joining("\n"));
+        return readConfiguration(inputStream, sektionString);
+    }
+
+    public static Map<String, String> readConfiguration(InputStream inputStream, String sektionString) throws IOException, ConfigFileToolException
+    {
+
+            //            System.out.println(new File(fileName).getAbsolutePath());
+            Map<String, String> configMap = new HashMap<String, String>();
+            Wini ini = new Wini();
+
+            ini.load(inputStream);
+            Ini.Section section = ini.get(sektionString);
+            if (section != null)
+            {
+                Set<String> keySet = section.keySet();
+                String[] keysArray = keySet.toArray(new String[0]);
+                for (int i = 0; i < keysArray.length; i++)
+                {
+                    configMap.put(keysArray[i], section.get(keysArray[i]));
+                }
+            } else
+            {
+                String message = "Folgende Section wurde in der INI-Datei nicht gefunden: " + sektionString;
+                logMessage(message, Level.SEVERE);
+                throw new ConfigFileToolException(message);
+            }
+            return configMap;
+        }
+
+    
+    
     /**
      *
      * Description:
@@ -162,6 +211,35 @@ public class ConfigFileTool extends AbstractLoggingListener
 
     /**
      *
+     * Description:
+     *
+     * @param fileName
+     * @return Map<String, Map<String, String>>
+     * @throws ConfigFileToolException
+     * Creation: 23.02.2016 by mst
+     */
+    public static Map<String, Map<String, String>> readIniFileWithAllSectionsFromResources(final String fileName) throws ConfigFileToolException
+    {
+        Map<String, Map<String, String>> sectionConfigMap = new HashMap<>();
+        String[] sections;
+
+        try
+        {
+            sections = getSectionsFromResources(fileName);
+            for (String sectionName : sections)
+            {
+                sectionConfigMap.put(sectionName, readConfigurationFromResources(fileName, sectionName));
+            }
+
+        } catch (IOException e)
+        {
+            throw new ConfigFileToolException((e));
+        }
+        return sectionConfigMap;
+    }
+
+    /**
+     *
      * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
      *
      * @param fileName
@@ -181,6 +259,57 @@ public class ConfigFileTool extends AbstractLoggingListener
         System.out.println(filePatj);
         ini.load(new FileReader(file));
         return sectionSet.toArray(new String[0]);
+    }
+
+    /**
+     *
+     * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
+     *
+     * @param fileName
+     * @return
+     * @throws InvalidFileFormatException
+     * @throws FileNotFoundException
+     * @throws IOException
+     *             Creation: 15.10.2015 by mst
+     */
+    public static String[] getSectionsFromResources(String fileName) throws IOException
+    {
+        byte[] bytes = IOUtils.toByteArray(ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName));
+        InputStream inputStream = ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null)
+        {
+            throw new IllegalArgumentException(fileName + " is not found");
+        }
+        Wini ini = new Wini();
+        Set<String> sectionSet = ini.keySet();
+
+        ini.load(inputStream);
+        return sectionSet.toArray(new String[0]);
+    }
+
+    /**
+     *
+     * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
+     *
+     * @param fileName
+     * @return
+     * @throws InvalidFileFormatException
+     * @throws FileNotFoundException
+     * @throws IOException
+     *             Creation: 15.10.2015 by mst
+     */
+    public static Set<String> getSectionsAsSetFromResource(String fileName) throws IOException
+    {
+        byte[] bytes = IOUtils.toByteArray(ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName));
+        InputStream inputStream = ConfigFileTool.class.getClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null)
+        {
+            throw new IllegalArgumentException(fileName + " is not found");
+        }
+        Wini ini = new Wini();
+        Set<String> sectionSet = ini.keySet();
+        ini.load(inputStream);
+        return sectionSet;
     }
 
     /**
