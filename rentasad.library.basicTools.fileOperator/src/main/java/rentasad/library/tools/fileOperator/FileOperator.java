@@ -25,10 +25,8 @@ import rentasad.library.basicTools.dateTool.DateTools;
  * rentasad.library.tools.fileOperator
  * @creation 31.08.2021
  * @author mst
- * 
- * 
- * 
- *
+ * @version B2.2.3
+ * updated 03.03.2022
  */
 public class FileOperator
 {
