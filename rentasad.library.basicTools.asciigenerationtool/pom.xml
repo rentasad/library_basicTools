@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.5.0</version>
+		<version>B2.5.2</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
@@ -34,7 +34,7 @@ For Copy & Paste
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.4.0</version>
+			<version>5.9.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

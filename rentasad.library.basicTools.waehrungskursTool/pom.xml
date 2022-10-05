@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.5.0</version>
+		<version>B2.5.2</version>
 	</parent>
 	<groupId>rentasad</groupId>
 	<artifactId>rentasad.library.basicTools.waehrungskursTool</artifactId>
@@ -22,14 +22,14 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.4.0</version>
+			<version>5.9.0</version>
 			<scope>test</scope>
 		</dependency>
 			<!-- https://mvnrepository.com/artifact/org.json/json -->
 			<dependency>
 				<groupId>org.json</groupId>
 				<artifactId>json</artifactId>
-				<version>20210307</version>
+				<version>20220924</version>
 			</dependency>
 	</dependencies>
 	<build>

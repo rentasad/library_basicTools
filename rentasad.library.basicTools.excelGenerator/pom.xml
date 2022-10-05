@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.5.0</version>
+		<version>B2.5.2</version>
 	</parent>
 
 	<groupId>rentasad</groupId>
@@ -20,14 +20,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
-		<apachePoiVersion>5.0.0</apachePoiVersion>
+		<apachePoiVersion>5.2.2</apachePoiVersion>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.4.0</version>
+			<version>5.9.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->

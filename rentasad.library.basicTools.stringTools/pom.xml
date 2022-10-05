@@ -4,7 +4,7 @@
   <parent>
     <artifactId>rentasad.library.basicTools</artifactId>
     <groupId>rentasad.library</groupId>
-    <version>B2.5.0</version>
+    <version>B2.5.2</version>
   </parent>
 
   <groupId>rentasad</groupId>
@@ -24,7 +24,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
