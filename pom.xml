@@ -30,7 +30,7 @@
 		-->
 		<!-- USING WITH ${basicToolParentVersion} -->
 		<basicToolParentVersion>B2.5.2</basicToolParentVersion>
-		<dbToolParentVersion>D2.5.2</dbToolParentVersion>
+		<dbToolParentVersion>D2.5.4</dbToolParentVersion>
 	</properties>
 	<dependencies>
 		<dependency>
