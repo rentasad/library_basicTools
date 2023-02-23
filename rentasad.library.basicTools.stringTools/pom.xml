@@ -7,7 +7,7 @@
     <version>B2.5.2</version>
   </parent>
 
-  <groupId>rentasad</groupId>
+  <groupId>rentasad.library</groupId>
   <artifactId>rentasad.library.basicTools.stringTools</artifactId>
 
   <name>rentasad.library.basicTools.stringTools</name>

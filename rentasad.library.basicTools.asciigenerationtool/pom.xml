@@ -9,12 +9,12 @@
 		<version>B2.5.2</version>
 	</parent>
 
-	<groupId>rentasad</groupId>
+	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.asciigenerationtool</artifactId>
 
 <!-- 
 For Copy & Paste
-	<groupId>rentasad</groupId>
+	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.asciigenerationtool</artifactId>
 	<version>${basicToolParentVersion}</version>
  -->
@@ -38,7 +38,7 @@ For Copy & Paste
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>rentasad</groupId>
+			<groupId>rentasad.library</groupId>
 			<artifactId>rentasad.library.basicTools.numberTools</artifactId>
 			<version>${basicToolParentVersion}</version>
 		</dependency>

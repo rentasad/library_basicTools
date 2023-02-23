@@ -9,13 +9,13 @@
 		<version>B2.5.2</version>
 	</parent>
 
-	<groupId>rentasad</groupId>
+	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.fileOperator</artifactId>
 
 <!-- 
 COPY & PASTE FOR INSERT:
 		<dependency>
-			<groupId>rentasad</groupId>
+			<groupId>rentasad.library</groupId>
 			<artifactId>rentasad.library.basicTools.fileOperator</artifactId>
 			<version>B2.2.2</version>
 		</dependency>
@@ -37,7 +37,7 @@ COPY & PASTE FOR INSERT:
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>rentasad</groupId>
+			<groupId>rentasad.library</groupId>
 			<artifactId>rentasad.library.basicTools.dateTools</artifactId>
 			<version>${basicToolParentVersion}</version>
 		</dependency>
