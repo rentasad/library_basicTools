@@ -1,6 +1,6 @@
 @echo off
 cls
-call mvn versions:set -DnewVersion=B2.5.1
+call mvn versions:set -DnewVersion=B2.6.0
 pause
 ::If you made a mistake, do
 :: mvn versions:revert

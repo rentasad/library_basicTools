@@ -6,9 +6,9 @@
 	<parent>
 		<artifactId>rentasad.library.basicTools</artifactId>
 		<groupId>rentasad.library</groupId>
-		<version>B2.5.2</version>
+		<version>B2.6.0</version>
 	</parent>
-	<groupId>rentasad</groupId>
+	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.waehrungskursTool</artifactId>
 	<name>rentasad.library.basicTools.waehrungskursTool</name>
 	<!-- FIXME change it to the project's website -->
