@@ -1,6 +1,5 @@
 package rentasad.library.configFileTool;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -30,6 +29,16 @@ class ConfigFileToolTest
 		assertEquals("test",configMap.get("source"));
 		assertEquals("Max",configMap.get("firstname"));
 		assertEquals("Mustermann",configMap.get("lastname"));
+	}
+
+	@Test void readConfigurationMissingFileFromResources() throws IOException, ConfigFileToolException
+	{
+		String configFile = "config/test1.ini";
+		// Überprüfen, ob die Methode eine IllegalArgumentException wirft
+		assertThrows(IllegalArgumentException.class, () -> {
+			ConfigFileTool.readConfigurationFromResources(configFile, "TEST");
+		});
+
 	}
 
 	@Test void getSectionsFromResources() throws IOException

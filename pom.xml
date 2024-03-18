@@ -10,7 +10,7 @@
 	<url>https://github.com/rentasad/library_basicTools</url>
 	<packaging>pom</packaging>
 	<properties>
-                <project.java.version>17</project.java.version>
+		<project.java.version>17</project.java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
@@ -33,6 +33,13 @@
 		<dbToolParentVersion>D2.6.0</dbToolParentVersion>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
