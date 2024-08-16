@@ -10,11 +10,14 @@
 	<url>https://github.com/rentasad/library_basicTools</url>
 	<packaging>pom</packaging>
 	<properties>
-                <project.java.version>17</project.java.version>
+		<project.java.version>17</project.java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
+
 		<!-- DEPENDENCIES VERSIONS -->
+
+<!--		<javafx.platform>17.0.11</javafx.platform>-->
 		<maven-clean-plugin>3.2.0</maven-clean-plugin>
 		<maven-resources-plugin>3.3.1</maven-resources-plugin>
 		<maven-compiler-plugin>3.11.0</maven-compiler-plugin>
@@ -25,14 +28,21 @@
 		<maven-site-plugin>3.12.1</maven-site-plugin>
 		<mavenProjectInfoReportsPlugin>3.1.2</mavenProjectInfoReportsPlugin>
 		<maven-project-info-reports-plugin>3.4.5</maven-project-info-reports-plugin>
-		<!-- 
-		VERSION PROPERTY 
+		<!--
+		VERSION PROPERTY
 		-->
 		<!-- USING WITH ${basicToolParentVersion} -->
 		<basicToolParentVersion>B2.6.0</basicToolParentVersion>
 		<dbToolParentVersion>D2.6.0</dbToolParentVersion>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
@@ -42,7 +52,7 @@
 	</dependencies>
 	<build>
 		<pluginManagement>
-			<!-- lock down plugins versions to avoid using Maven defaults (may be 
+			<!-- lock down plugins versions to avoid using Maven defaults (may be
 				moved to parent pom) -->
 			<plugins>
 				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -105,6 +115,31 @@
 							<phase>clean</phase>
 							<goals>
 								<goal>clean</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok-maven-plugin</artifactId>
+					<version>1.18.20.0</version>
+					<executions>
+						<execution>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>delombok</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>kr.motd.maven</groupId>
+					<artifactId>os-maven-plugin</artifactId>
+					<version>1.6.2</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>detect</goal>
 							</goals>
 						</execution>
 					</executions>

@@ -9,25 +9,25 @@
 		<version>B2.6.0</version>
 	</parent>
 
-	<groupId>rentasad.library</groupId>
+<!--	<groupId>rentasad.library</groupId>-->
 	<artifactId>rentasad.library.basicTools.exceptions</artifactId>
-	
-	<!-- 
-	
+
+	<!--
+
 	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.exceptions</artifactId>
 	<version>${basicToolParentVersion}</version>
-		
+
 	 -->
 
 	<name>rentasad.library.basicTools.exceptions</name>
-	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
+<!--		<javafx.platform>17.0.11</javafx.platform>-->
+		<javafx.version>17.0.11-ea+2</javafx.version>
 	</properties>
 
 	<dependencies>
@@ -37,15 +37,18 @@
 			<version>5.9.0</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>19</version>
+			<version>${javafx.version}</version>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
-		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 				defaults (may be moved to parent pom) -->
 			<plugins>
 				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -61,6 +64,10 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin}</version>
+					<configuration>
+						<source>${project.java.version}</source>
+						<target>${project.java.version}</target>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -89,16 +96,23 @@
 					<version>${maven-project-info-reports-plugin}</version>
 				</plugin>
 
-				<!-- <plugin>
-					<groupId>org.openjfx</groupId>
-					<artifactId>javafx-maven-plugin</artifactId>
-					<version>0.0.5</version>
-					<configuration>
-						<mainClass>HelloFX</mainClass>
-					</configuration>
-				</plugin>
-				 -->
+<!--				<plugin>-->
+<!--					<groupId>org.openjfx</groupId>-->
+<!--					<artifactId>javafx-maven-plugin</artifactId>-->
+<!--					<version>0.0.5</version>-->
+<!--					<configuration>-->
+<!--						<mainClass>HelloFX</mainClass>-->
+<!--					</configuration>-->
+<!--				</plugin>-->
 
+<!--				<plugin>-->
+<!--					<groupId>org.openjfx</groupId>-->
+<!--					<artifactId>javafx-maven-plugin</artifactId>-->
+<!--					<version>0.0.8</version>-->
+<!--					<configuration>-->
+<!--						<mainClass>hellofx/org.openjfx.App</mainClass>-->
+<!--					</configuration>-->
+<!--				</plugin>-->
 			</plugins>
 		</pluginManagement>
 	</build>
