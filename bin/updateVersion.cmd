@@ -1,4 +1,5 @@
 @echo off
+cd ..
 cls
 call mvn versions:set -DnewVersion=B2.6.0
 pause
