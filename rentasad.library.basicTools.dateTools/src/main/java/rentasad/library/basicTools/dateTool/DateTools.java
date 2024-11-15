@@ -5,10 +5,9 @@ import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.time.Instant;
-import java.time.Month;
-import java.time.OffsetDateTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -1077,16 +1076,29 @@ public class DateTools
 	}
 
 	/**
-	 * 
-	 * Description:
-	 * 
-	 * @param updatedDateString
-	 * @return Creation: 17.08.2018 by mst
+	 * Converts a SQL timestamp string to a Date object.
+	 * The input string can be in the format "yyyy-MM-dd'T'HH:mm:ss" or "yyyy-MM-dd HH:mm:ss".
+	 *
+	 * @param updatedDateString the SQL timestamp string to be converted
+	 * @return the converted Date object
 	 */
-	public static Date getDateFromSqlTimeStampString(String updatedDateString)
-	{
-		Timestamp ts = Timestamp.valueOf(updatedDateString);
-		return new Date(ts.getTime());
+	public static Date getDateFromSqlTimeStampString(String updatedDateString) {
+		// Definiere die beiden möglichen Formate
+		DateTimeFormatter formatterWithT = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+		DateTimeFormatter formatterWithoutT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+		LocalDateTime localDateTime;
+
+		try {
+			// Versuch, das Format mit "T" zu parsen
+			localDateTime = LocalDateTime.parse(updatedDateString, formatterWithT);
+		} catch (DateTimeParseException e) {
+			// Falls das erste Format nicht passt, versuche es ohne "T"
+			localDateTime = LocalDateTime.parse(updatedDateString, formatterWithoutT);
+		}
+
+		// Konvertiere in Timestamp und dann in Date
+		return new Date(Timestamp.valueOf(localDateTime).getTime());
 	}
 
 	/**
