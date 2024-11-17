@@ -1,0 +1,30 @@
+[submodule "submodules/commandExecutionTool"]
+	path = submodules/commandExecutionTool
+	url = git@github.com:rentasad/rentasad.library.basicTools.commandExecutionTool
+[submodule "submodules/configFileTool"]
+	path = submodules/configFileTool
+	url = git@github.com:rentasad/rentasad.library.basicTools.configFileTool
+[submodule "submodules/csvGenerator"]
+	path = submodules/csvGenerator
+	url = git@github.com:rentasad/rentasad.library.basicTools.csvGenerator
+[submodule "submodules/dateTools"]
+	path = submodules/dateTools
+	url = git@github.com:rentasad/rentasad.library.basicTools.dateTools
+[submodule "submodules/emailSendTool"]
+	path = submodules/emailSendTool
+	url = git@github.com:rentasad/rentasad.library.basicTools.emailSendTool
+[submodule "submodules/fileOperator"]
+	path = submodules/fileOperator
+	url = git@github.com:rentasad/rentasad.library.basicTools.fileOperator
+[submodule "submodules/numberTools"]
+	path = submodules/numberTools
+	url = git@github.com:rentasad/rentasad.library.basicTools.numberTools
+[submodule "submodules/stringTools"]
+	path = submodules/stringTools
+	url = git@github.com:rentasad/rentasad.library.basicTools.stringTools
+[submodule "submodules/waehrungskursTool"]
+	path = submodules/waehrungskursTool
+	url = git@github.com:rentasad/rentasad.library.basicTools.waehrungskursTool
+[submodule "submodules/zipTools"]
+	path = submodules/zipTools
+	url = git@github.com:rentasad/rentasad.library.basicTools.zipTools
