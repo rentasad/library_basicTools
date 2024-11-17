@@ -7,26 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rentasad.library.basicTools.zipTools" />
-        <module name="rentasad.library.basicTools.configFileTool" />
-        <module name="rentasad.library.basicTools.logging" />
-        <module name="rentasad.library.basicTools.waehrungskursTool" />
-        <module name="rentasad.library.basicTools.exceptions" />
-        <module name="rentasad.library.basicTools.commandExecutionTool" />
-        <module name="rentasad.library.basicTools.operatingSystemTool" />
-        <module name="rentasad.library.basicTools.stringTools" />
-        <module name="rentasad.library.basicTools.csvGenerator" />
-        <module name="rentasad.library.basicTools.adressTools" />
-        <module name="rentasad.library.basicTools.emailSendTool" />
         <module name="rentasad.library.basicTools.asciigenerationtool" />
-        <module name="rentasad.library.basicTools.numberTools" />
-        <module name="rentasad.library.basicTools.dateTools" />
-        <module name="rentasad.library.basicTools.fileOperator" />
+        <module name="rentasad.library.basicTools.logging" />
+        <module name="rentasad.library.basicTools.exceptions" />
+        <module name="rentasad.library.basicTools.operatingSystemTool" />
+        <module name="rentasad.library.basicTools.adressTools" />
         <module name="rentasad.library.basicTools.excelGenerator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="rentasad.library.basicTools.commandExecutionTool" target="17" />
+      <module name="rentasad.library.basicTools.configFileTool" target="17" />
+      <module name="rentasad.library.basicTools.csvGenerator" target="17" />
+      <module name="rentasad.library.basicTools.dateTools" target="17" />
+      <module name="rentasad.library.basicTools.emailSendTool" target="17" />
+      <module name="rentasad.library.basicTools.fileOperator" target="17" />
       <module name="rentasad.library.basicTools.ftpUtil" target="1.8" />
+      <module name="rentasad.library.basicTools.numberTools" target="17" />
+      <module name="rentasad.library.basicTools.stringTools" target="17" />
+      <module name="rentasad.library.basicTools.waehrungskursTool" target="17" />
+      <module name="rentasad.library.basicTools.zipTools" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

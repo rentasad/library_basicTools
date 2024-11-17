@@ -16,8 +16,6 @@
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
 
 		<!-- DEPENDENCIES VERSIONS -->
-
-<!--		<javafx.platform>17.0.11</javafx.platform>-->
 		<maven-clean-plugin>3.2.0</maven-clean-plugin>
 		<maven-resources-plugin>3.3.1</maven-resources-plugin>
 		<maven-compiler-plugin>3.11.0</maven-compiler-plugin>

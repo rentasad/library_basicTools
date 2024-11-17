@@ -2,5 +2,31 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.commandExecutionTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.configFileTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.csvGenerator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.dateTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.emailSendTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.emailSendTool/submodules/rentasad.library.basicTools.configFileTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.emailSendTool/submodules/rentasad.library.basicTools.stringTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.fileOperator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.fileOperator/submodules/rentasad.library.basicTools.dateTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.numberTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.stringTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.waehrungskursTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.zipTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.zipTools/submodules/commandExecutionTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.zipTools/submodules/fileOperator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules-create/rentasad.library.basicTools.zipTools/submodules/stringTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/commandExecutionTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/configFileTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/csvGenerator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/dateTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/emailSendTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/fileOperator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/numberTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/stringTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/waehrungskursTool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/zipTools" vcs="Git" />
   </component>
 </project>
