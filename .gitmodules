@@ -28,3 +28,6 @@
 [submodule "submodules/zipTools"]
 	path = submodules/zipTools
 	url = git@github.com:rentasad/rentasad.library.basicTools.zipTools
+[submodule "submodules/excelGenerator"]
+	path = submodules/excelGenerator
+	url = git@github.com:rentasad/rentasad.library.basicTools.excelGenerator.git
