@@ -20,7 +20,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
-		<apachePoiVersion>5.2.2</apachePoiVersion>
+		<apachePoiVersion>5.4.0</apachePoiVersion>
 	</properties>
 
 	<dependencies>
